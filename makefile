@@ -1,25 +1,29 @@
 CC = gcc
-OPTS = -Wextra -Wall -Wpedantic -g -o bin/
-COMP = CC OPTS
+OPTS = -Wextra -Wall -Wpedantic -g
+COMP = $(CC) $(OPTS)
 
 EXENAME = main
 
-FILES = main.c util.o cabinet.o
 HFILES = util.h cabinet.h
 CFIELS = util.c cabinet.c
 
-make: FILES
-	$(COMP) $(EXENAME) $(FILES)
+FILES = main.c $(HFILES)
 
-run: EXENAME
+make: $(FILES)
+	$(COMP) -o $(EXENAME) $(FILES)
+
+run: $(EXENAME)
 	./$(EXENAME)
 
 clean:
 	rm *.o
 	rm $(EXENAME)
-	rm -rf bin/
 
-cabinet.o:
-	$(COMP) cabinet.o cabinet.h cabinet.c
-	$(COMP) cabinet cabinet.h cabinet.c
+util.o: util.c util.h
+#	$(COMP) -c util.c
+	$(COMP) -o util util.h util.c
+
+cabinet.o: cabinet.c cabinet.h
+#	$(COMP) -c cabinet.c
+	$(COMP) -o cabinet cabinet.h cabinet.c
 
