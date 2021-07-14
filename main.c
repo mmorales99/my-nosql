@@ -11,7 +11,6 @@
 
 int main(){
 
-    print("esta linea");print("esta otra linea esta abajo");
 
     return 0;
 }
