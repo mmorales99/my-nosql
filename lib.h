@@ -18,15 +18,20 @@
 
     typedef struct CannonicalObject{
         void *this;
+        //void* (*constructor)();
+        //const Object Object_default = {.this = null, .constructor = (Object*)new_Object_v};
     }Object;
+    Object* new_Object(void*o,...);
 
-    Object* new_Object_p(void*o,void*that){
-        that = o;
-        return o;
+    Object* new_Object_p(void*o,Object*b){
+        b = new_Object(null);
+        b->this = o;
+        return b;
     }
     Object* new_Object_v(){
         Object *o;
-        o->this = &o;
+        o = (Object*)malloc(sizeof(Object));
+        o->this = o;
         return o;
     }
     Object* new_Object(void*o,...){
