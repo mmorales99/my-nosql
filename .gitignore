@@ -1,2 +1,5 @@
 01\ -\ Enunciado\ Practica.docx
 my-nosql
+.vs*
+*.gch
+*.out
