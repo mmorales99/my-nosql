@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 #include "bool.h"
 #pragma endregion
 
@@ -21,11 +22,23 @@
         //void* (*constructor)();
         //const Object Object_default = {.this = null, .constructor = (Object*)new_Object_v};
     }Object;
-    Object* new_Object(void*o,...);
 
-    Object* new_Object_p(void*o,Object*b){
-        b = new_Object(null);
-        b->this = o;
+    typedef struct InheritedCannonical{
+        Object base;
+        void * this;
+    }Heir;
+    
+
+    Object* new_Object(void*o);
+
+    
+    #define Type(x) (__typeof__(x))
+    
+    Object* new_Object_p(void*o){
+        o = (Object*)malloc(sizeof(Object));
+        ((Object*)o)->this = o;
+        Object* b = o;
+        b->this = ((Object*)o);
         return b;
     }
     Object* new_Object_v(){
@@ -34,11 +47,11 @@
         o->this = o;
         return o;
     }
-    Object* new_Object(void*o,...){
+    Object* new_Object(void*o){
         if(o == null){
             return new_Object_v();
         }else if(o!=null){
-            va_list va;
+            return new_Object_p(o);
         }
         return null;
     }
