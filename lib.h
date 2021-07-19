@@ -16,17 +16,33 @@
     #define Undefined 
 
     #pragma region NUMERIC
-        typedef struct NumericType{
-
-        }numeric;
         
         typedef struct StringType{
-
+            char *values;
+            size_t leng;
         }string;
 
+        typedef struct NumericType{
+            string value;
+        }numeric;
+        
+        typedef struct{ short unsigned int value; }day;
+        typedef struct{ short unsigned int value; }month;
+        typedef struct{ short unsigned int value; }year;
         typedef struct DateType{
             string time;
         }date;
+
+        typedef struct DataType{
+            string value;
+            size_t leng;
+            char termination;
+            char *next;
+        }Data;
+        typedef struct DataCollection{
+            string value;
+            Data *values;
+        }
         
 
     #pragma endregion
