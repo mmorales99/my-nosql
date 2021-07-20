@@ -9,6 +9,11 @@
 
 
 int main(){
+    //string str = new_String();
+    char *str = "hola";
+    char *ctr = "mundo";
+    rconcat(str,ctr);
+    print("%s\n",str);
     return 0;
 }
 

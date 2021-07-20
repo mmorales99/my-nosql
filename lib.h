@@ -15,24 +15,89 @@
     #define undefined
     #define Undefined 
 
-    #pragma region NUMERIC
-        
+    #pragma region STRING
         typedef struct StringType{
             char *values;
-            size_t leng;
+            size_t (*leng)();
+            void (*lconcat)();
+            void (*rconcat)();
+            void (*copy)(char*);
+            char* (*split)();
         }string;
+        size_t leng(const char* str){
+            return (size_t)(sizeof(str)/sizeof(char)+1);
+        }
+        void rconcat(char *str ,const char*c){
+            int last_char = leng(str);
+            str = realloc(str,last_char+leng(c));
+            last_char-=1;
+            int i = 0;
+            for(i;i<leng(c);i++){
+                str[last_char+i] = c[i];
+            }
+            str[leng(str)-1]='\0';
+        }
+        void lconcat(char *str ,const char*c){
+            int last_char = leng(str);
+            str = realloc(str,last_char+leng(c));
+            last_char+=leng(c);
+            int i = 0;
+            char *aux[last_char+leng(c)];
+            for(i=0;i<leng(str);i++){
+                aux[i+leng(c)] = str+i;
+            }
+            for(i=0;i<leng(c);i++){
+                aux[i] = c+i;
+            }
+            for(i=0;i<leng(str);i++) str[i] = aux[i];
+            str[leng(str)-1]='\0';
+        }
+        void copy(string *str1, const string *str2){
+            str1->values = realloc(str1->values, leng(str2->values));
+            memset(str1->values,'\0',leng(str1->values));
+            rconcat(str1->values,str2->values);
+        }
+        char* split(){
+            return 'o';
+        }
+        string new_String(){
+            string str;
+            str.lconcat = lconcat;
+            str.leng = leng;
+            str.rconcat = rconcat;
+            str.split = split;
+            str.values = malloc(sizeof(char));
+        }
+    #pragma endregion
 
+    #pragma region NUMERIC 
         typedef struct NumericType{
-            string value;
+            string          value;
+            signed int      (*ToInt)();
+            float           (*ToFloat)();
+            double          (*ToDouble)();
+            unsigned int    (*ToUInt)();
+            void (*Add)();
+            void (*Sub)();
+            void (*Mul)();
+            void (*Div)();
         }numeric;
-        
-        typedef struct{ short unsigned int value; }day;
-        typedef struct{ short unsigned int value; }month;
-        typedef struct{ short unsigned int value; }year;
+    #pragma endregion
+
+    #pragma region DATE
+        typedef struct{ numeric nvalue; }day;
+        typedef struct{ numeric nvalue; }month;
+        typedef struct{ numeric nvalue; }year;
         typedef struct DateType{
             string time;
+            day Day;
+            month Month;
+            year Year;
+            void (*Format)();
         }date;
+    #pragma endregion
 
+    #pragma region LIST
         typedef struct DataType{
             string value;
             size_t leng;
@@ -42,21 +107,18 @@
         typedef struct DataCollection{
             string value;
             Data *values;
-        }
-        
-
+        }List;
     #pragma endregion
 
-    //////////////////////
-    //  Renamed Funcs   //
+    /*  Renamed Funcs   */  
     #define print printf
 #pragma endregion
 
 #pragma region BASE OBJECT SUPPORT
     typedef struct CannonicalObject{
         void *this;
-        //void* (*constructor)();
-        //const Object Object_default = {.this = null, .constructor = (Object*)new_Object_v};
+        /*void* (*constructor)();
+        const Object Object_default = {.this = null, .constructor = (Object*)new_Object_v};*/
     }Object;
     Object* New_Object_p(void*o){
         o = (Object*)malloc(sizeof(Object));
@@ -113,6 +175,5 @@
     
     */
 #pragma endregion
-
 
 #endif
