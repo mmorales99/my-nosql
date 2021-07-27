@@ -2,11 +2,7 @@
 #define TYPES
 
 #pragma region ESPECIAL TYPES
-    #define null NULL
-    #define Null NULL
-    #define undefined
-    #define Undefined 
-
+    
     #pragma region STRING
         typedef struct StringType{
             char *values;

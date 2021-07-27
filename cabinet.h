@@ -5,26 +5,19 @@
 
 #pragma region CABINET MORPHOLOGY
 
-typedef struct KVPairType
-{
-    Key key;
-    Val value;
-    Keyval next;
-    Keyval prev;
-}Keyval;
-typedef Keyval KeyvalList*;
-
 typedef struct CabinetType{
     char *name;
     KeyvalList pairs;
     size_t size;
 }Cabinet;
 
+typedef Cabinet CabList*;
 
 #pragma endregion
 
 #pragma region CABINET RELATED FUNCTIONS
     int IsDup_c(const CabList &);
+    CabList newCabList(CabList cl, unsigned total);
 #pragma endregion
 
 #endif
