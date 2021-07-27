@@ -5,6 +5,11 @@
 
 #pragma region VALUE MORPHOLOGY
 
+typedef struct ValueType{
+    char *value;
+    unsigned long long int id;
+}Val;
+
 #pragma endregion
 
 #pragma region VALUE RELATED FUNCTIONS
@@ -14,8 +19,8 @@
 
 #endif
     
-    
+    /*
     numeric (numérico entero o real)
     string (cadena de caracteres)
     date (fecha en formato YYYY-MM-DD o YYYY/MM/DD)
-    list (lista de valores separados por el carácter 'ø' → código ASCII 248)
+    list (lista de valores separados por el carácter 'ø' → código ASCII 248)*/
