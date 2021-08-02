@@ -10,3 +10,16 @@ int IsDup_k( const KeyList &keys , char* id){
     }
     return i;
 }
+
+Key* newKey(Key k){
+    Key *ik = newEmptyKey();
+    strcpy(ik->value,k.value);
+    return ik;
+}
+
+Key* newEmptyKey(){
+    static unsigned long long int id_gen = 0;
+    Key* k = (Key*)malloc(sizeof(Key));
+    k->id = generateID(id_gen);
+    return k;
+}

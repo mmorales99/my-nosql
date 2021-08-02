@@ -16,6 +16,11 @@
 //#include "types.h"
 #pragma endregion
 
+unsigned long long int generateID(unsigned long long gen){
+    int c;
+    return gen*c;
+}
+
 #pragma region DEPENDENCIES
     #include "value.h"
     #include "key.h"

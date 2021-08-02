@@ -10,6 +10,8 @@
 
 int main(){
     
+    printf("%d", generateID(1));
+
     return 0;
 }
 

@@ -1,13 +1,19 @@
 #include "cabinet.h"
 
 Cabinet* newCabinet(){
-    Cabinet * c = (Cabinet)malloc(sizeof(Cabinet));
+    Cabinet * c = (Cabinet*)malloc(sizeof(Cabinet));
     c->pairs = newEmptyPair();
-    return 
+    return c;
 }
 void destroyCabinet(Cabinet* c){
 
     free(c);
+}
+
+CabList newEmptyCabList(unsigned total){
+    CabList l = (Cabinet*)calloc(total,sizeof(Cabinet));
+    memset(&l,sizeof(Cabinet)*total,0);
+    
 }
 
 CabList newCabList(CabList cl, unsigned total){
@@ -19,13 +25,13 @@ CabList newCabList(CabList cl, unsigned total){
     }
 }
 
-int IsDup_c( const CabList &cabs , char* id){
+int IsDup_c( const CabList *cabs , unsigned long long int id){
     int i = -1;
-    Cabinet c;
-    for(i;i<cabs.length();i++){
-        c = cabs[i];
+    Cabinet *c;
+    for(i;i<cabs->size;i++){
+        c = (Cabinet*)cabs[i];
         if(i<0) continue;
-        if(strcmp(c.id,id)==0) break;
+        if(c->id == id) break;
     }
     return i;
 }

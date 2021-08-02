@@ -7,16 +7,17 @@
 
 typedef struct CabinetType{
     char *name;
-    KeyvalList pairs;
-    size_t size;
+    PairList pairs;
+    unsigned long int size;
+    unsigned long long int id
 }Cabinet;
 
-typedef Cabinet CabList*;
+typedef Cabinet CabList[];
 
 #pragma endregion
 
 #pragma region CABINET RELATED FUNCTIONS
-    int IsDup_c(const CabList &);
+    int IsDup_c(const CabList*,unsigned long long int);
     CabList newCabList(CabList cl, unsigned total);
 #pragma endregion
 

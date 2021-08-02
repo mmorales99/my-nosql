@@ -17,8 +17,8 @@ typedef Pair PairList*;
 #pragma endregion
 
 #pragma region PAIR RELATED FUNCTIONS
-    Pair newEmptyPair();
-    Pair newPair(Key k, Val v);
+    Pair* newEmptyPair();
+    Pair* newPair(Key k, Val v);
 #pragma endregion
 
 #endif
