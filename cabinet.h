@@ -1,13 +1,24 @@
-#pragma once
-#ifndef __CABINET__
-#define __CABINET__
+#ifndef CABINET
+#define CABINET
 
-typedef struct CABINET{
-    char* nombre;
-    void* clave;
-    void* valor;
-    //unsigned long int id;
-}TCabinet;
+#include "lib.h"
 
+#pragma region CABINET MORPHOLOGY
+
+typedef struct CabinetType{
+    char *name;
+    PairList pairs;
+    unsigned long int size;
+    unsigned long long int id
+}Cabinet;
+
+typedef Cabinet CabList[];
+
+#pragma endregion
+
+#pragma region CABINET RELATED FUNCTIONS
+    int IsDup_c(const CabList*,unsigned long long int);
+    CabList newCabList(CabList cl, unsigned total);
+#pragma endregion
 
 #endif

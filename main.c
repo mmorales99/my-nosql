@@ -1,15 +1,19 @@
-#pragma once
-#ifndef __MAIN__
-#define __MAIN__
+#ifndef MAIN
+#define MAIN main
 
-#include <stdio.h>
-#include "cabinet.h"
+#pragma region INCLUDES
+#include "lib.h"
+#pragma endregion
 
-int main(int argc, char** argv){
+#pragma region MAIN_CODE
 
-    printf("Main");
+
+int main(){
+    
+    printf("%d", generateID(1));
 
     return 0;
 }
 
+#pragma endregion
 #endif

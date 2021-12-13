@@ -1,29 +1,8 @@
-CC = gcc
-OPTS = -Wextra -Wall -Wpedantic -g
-COMP = $(CC) $(OPTS)
 
-EXENAME = main
-
-HFILES = util.h cabinet.h
-CFIELS = util.c cabinet.c
-
-FILES = main.c $(HFILES)
+FILES = main.c bool.h bool.c
 
 make: $(FILES)
-	$(COMP) -o $(EXENAME) $(FILES)
+	gcc -Wall -Wextra -Wpedantic -ansi -M -Ofast -o my-nosql $(FILES)
 
-run: $(EXENAME)
-	./$(EXENAME)
-
-clean:
-	rm *.o
-	rm $(EXENAME)
-
-util.o: util.c util.h
-#	$(COMP) -c util.c
-	$(COMP) -o util util.h util.c
-
-cabinet.o: cabinet.c cabinet.h
-#	$(COMP) -c cabinet.c
-	$(COMP) -o cabinet cabinet.h cabinet.c
-
+debug: $(FILES)
+	gcc -Wall -Wextra -Wpedantic -anis -M -Og -o my-nosql $(FILES)

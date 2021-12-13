@@ -1,4 +1,5 @@
-*.o
-bin/
-'01 - Enunciado Practica.pdf'
-01\ -\ Enunciado\ Practica.pdf
+01\ -\ Enunciado\ Practica.docx
+my-nosql
+.vs*
+*.gch
+*.out

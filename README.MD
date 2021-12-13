@@ -4,3 +4,4 @@ Based on my first semester project for Programming Fundamentals assessment at Un
 
 Its based on Key-Value pairs.
  
+ As limitation, it will only be written in ANSI C, using the least external libraries.
