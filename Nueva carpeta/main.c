@@ -6,6 +6,7 @@
 
 int main ()
 {
+    //showProgramInfo();
     LOGCONF log_conf = {
         .MAXLOGLEVEL = CONST_LOGGING_LEVELS.INFO,
         .CONSOLE = true,
@@ -20,8 +21,9 @@ int main ()
 
     CrearEstructura();
 
-    DBMS db = new_DB();
-    Prompt p = new_Prompt(db);
+    // DBMS db = new_DB();
+    Prompt p = new_Prompt(NULL);
+    Prompt_StartSession(&p);
 
     log_verbose("Fin del programa.");
 }
