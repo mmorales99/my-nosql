@@ -24,4 +24,5 @@
 #ifndef ref
     #define ref(X) &(X)
 #endif
+#include "bool.h"
 #endif

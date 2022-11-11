@@ -1,20 +1,18 @@
-[Tue Nov  1 16:55:45 2022 - VERBOSE] Fin del programa.
-[Tue Nov  1 16:55:47 2022 - VERBOSE] Iniciando el programa.
-[Tue Nov  1 16:55:47 2022 - INFO] Construyendo DBMS.
-[Tue Nov  1 16:55:47 2022 - INFO] DBMS construido con: 1 cabinets.
-[Tue Nov  1 16:55:47 2022 - INFO] Inicializando 1 cabinets.
-[Tue Nov  1 16:55:47 2022 - INFO] Cabinet construido {len:0,name:(null)}.
-[Tue Nov  1 16:55:47 2022 - INFO] 1 cabinets inicializados.
-[Tue Nov  1 16:55:47 2022 - VERBOSE] Fin del programa.
-[Tue Nov  1 17:00:02 2022 - VERBOSE] Iniciando el programa.
-[Tue Nov  1 17:00:02 2022 - VERBOSE] Iniciando configuracion.
-[Tue Nov  1 17:00:02 2022 - VERBOSE] Leyendo linea de configuracion, longitud 13: SavePath:DATA
-
-[Tue Nov  1 17:00:02 2022 - VERBOSE] Configurado SavePath con el valor: SavePath
-[Tue Nov  1 17:00:02 2022 - INFO] Construyendo DBMS.
-[Tue Nov  1 17:00:02 2022 - INFO] DBMS construido con: 1 cabinets.
-[Tue Nov  1 17:00:02 2022 - INFO] Inicializando 1 cabinets.
-[Tue Nov  1 17:00:02 2022 - INFO] Cabinet construido {len:0,name:(null)}.
-[Tue Nov  1 17:09:43 2022 - INFO] Construyendo DBMS.
-[Tue Nov  1 17:35:34 2022 - INFO] Construyendo DBMS.
-[Tue Nov  1 17:35:38 2022 - INFO] Construyendo DBMS.
+[Fri Nov 11 19:35:31 2022 - INFO] Trying to execute terminate
+[Fri Nov 11 19:36:05 2022 - INFO] Trying to execute terminate
+[Fri Nov 11 19:38:08 2022 - INFO] Trying to execute terminate
+[Fri Nov 11 19:38:15 2022 - INFO] Trying to execute clear
+[Fri Nov 11 19:40:34 2022 - INFO] Trying to execute quit.
+[Fri Nov 11 19:40:34 2022 - INFO] Trying to tokenize.
+[Fri Nov 11 19:42:53 2022 - INFO] Trying to execute quit.
+[Fri Nov 11 19:42:53 2022 - INFO] TryExecute: Trying to tokenize.
+[Fri Nov 11 19:42:53 2022 - INFO] Checking Sintax
+[Fri Nov 11 19:42:53 2022 - INFO] Checking Sintax: Trying to tokenize.
+[Fri Nov 11 19:42:53 2022 - INFO] Checking Sintax: Tokenized to -259242892.
+[Fri Nov 11 19:43:07 2022 - INFO] Trying to execute quit.
+[Fri Nov 11 19:43:07 2022 - INFO] TryExecute: Trying to tokenize.
+[Fri Nov 11 19:43:07 2022 - INFO] Checking Sintax
+[Fri Nov 11 19:43:07 2022 - INFO] Checking Sintax: Trying to tokenize.
+[Fri Nov 11 19:43:07 2022 - INFO] Checking Sintax: Tokenized to 0.
+[Fri Nov 11 19:45:33 2022 - INFO] Trying to execute quit.
+[Fri Nov 11 19:46:16 2022 - INFO] Trying to execute quit.
